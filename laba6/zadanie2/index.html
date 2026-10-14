@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мультипликация</title>
+  <style>
+    #scene {
+      position: relative;
+      width: 640px;
+      height: 320px;
+      border: 1px solid #333;
+      overflow: hidden;
+    }
+    #hero {
+      position: absolute;
+      left: 0;
+      top: 60px;
+      font-size: 48px;
+      transition: left 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div id="scene">
+    <div id="hero"><img src="pyrokinesis.jpg" alt="Hero"></div>
+  </div>
+
+  <script>
+    const positions = [0, 40, 80, 120, 160, 200, 240, 260];
+    let i = 0;
+
+    setInterval(() => {
+      document.getElementById("hero").style.left = positions[i] + "px";
+      i = (i + 1) % positions.length;
+    }, 300);
+  </script>
+
+</body>
+</html>

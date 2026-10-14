@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Создаём массив
+        let styles = ["Джаз", "Блюз"];
+
+        // 2. Добавляем в конец
+        styles.push("Рок-н-ролл");
+
+        // 3. Заменяем значение в середине
+        let middle = Math.floor(styles.length / 2);
+        styles[middle] = "Классика";
+
+        // 4. Удаляем первый элемент и показываем его
+        let first = styles.shift();
+        alert(first); // "Джаз"
+
+        // 5. Вставляем в начало
+        styles.unshift("Рэп", "Регги");
+
+        alert(styles.join(", "));
+        // ["Рэп", "Регги", "Классика", "Рок-н-ролл"]
+    </script>
+</body>
+
+</html>

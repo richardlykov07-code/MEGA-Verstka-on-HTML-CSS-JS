@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Пример 2. Свойства option</title>
+</head>
+<body>
+    <form name="myForm">
+        <select name="language" size="4">
+            <option value="JS" selected="selected">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="CS">C#</option>
+            <option value="CPP">C++</option>
+        </select>
+    </form>
+    <div id="printBlock"></div>
+
+    <script>
+        const firstName = document.myForm.language.options[0];
+        const info =
+            "Index: " + firstName.index + "\n" +
+            "Text: "  + firstName.text  + "\n" +
+            "Value: " + firstName.value;
+
+        // вывод в консоль
+        console.log("Index:", firstName.index);
+        console.log("Text:",  firstName.text);
+        console.log("Value:", firstName.value);
+
+        // и на страницу
+        document.getElementById("printBlock").textContent = info;
+    </script>
+</body>
+</html>
+</html> 

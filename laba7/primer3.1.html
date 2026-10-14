@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Пример 3.1. Методы add() и remove()</title>
+</head>
+<body>
+    <form name="myForm">
+        <select name="language" size="5">
+            <option value="JS" selected="selected">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="CS">C#</option>
+            <option value="CPP">C++</option>
+        </select>
+
+        <p><input type="text" name="textInput"  placeholder="Введите текст" /></p>
+        <p><input type="text" name="valueInput" placeholder="Введите значение" /></p>
+        <p>
+            <input type="button" name="addButton"    value="Добавить" />
+            <input type="button" name="removeButton" value="Удалить"   />
+        </p>
+    </form>
+
+    <script>
+        const myForm         = document.myForm;
+        const addButton      = myForm.addButton;
+        const removeButton   = myForm.removeButton;
+        const languageSelect = myForm.language;
+
+        function addOption() {
+            const text  = myForm.textInput.value.trim();
+            const value = myForm.valueInput.value.trim();
+            if (text === "") { alert("Введите текст!"); return; }
+
+            const newOption = new Option(text, value || text);
+            // вместо options[length] = newOption используем метод add()
+            languageSelect.add(newOption);
+
+            myForm.textInput.value  = "";
+            myForm.valueInput.value = "";
+        }
+
+        function removeOption() {
+            const selectedIndex = languageSelect.options.selectedIndex;
+            if (selectedIndex === -1) { alert("Не выбран элемент!"); return; }
+            // вместо options[selectedIndex] = null используем метод remove()
+            languageSelect.remove(selectedIndex);
+        }
+
+        addButton.addEventListener("click", addOption);
+        removeButton.addEventListener("click", removeOption);
+    </script>
+</body>
+</html>

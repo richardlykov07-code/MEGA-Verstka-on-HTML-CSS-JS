@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Пример 2.1. Метод item()</title>
+</head>
+<body>
+    <form name="myForm">
+        <select name="language" size="4">
+            <option value="JS" selected="selected">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="CS">C#</option>
+            <option value="CPP">C++</option>
+        </select>
+    </form>
+    <div id="printBlock"></div>
+
+    <script>
+        const myForm = document.myForm;
+        const firstName = myForm.language.item(0);
+
+        console.log("Index:", firstName.index);
+        console.log("Text:",  firstName.text);
+        console.log("Value:", firstName.value);
+
+        document.getElementById("printBlock").textContent =
+            "Index: " + firstName.index +
+            ", Text: " + firstName.text +
+            ", Value: " + firstName.value;
+    </script>
+</body>
+</html>
